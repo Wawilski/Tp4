@@ -189,8 +189,16 @@ Yes
 ###  Compare the installation path of the binary with other students. Is it the same?
 ###  If you build it multiple times, do you get the same resulting output?
 ###  What happens when you run nix shell nixpkgs#hello? How does it differ from nix profile add nixpkgs#hello?
-### riefly explain the role of the Nix store (/nix/store) and why it is immutable.
+
+It runs a new shell containing the package nix package hello, and so the access to the package is temporary.
+"nix profile add nixpkgs#hello" add the package permanently in the user profile
+
+### Briefly explain the role of the Nix store (/nix/store) and why it is immutable.
+It is immutable to prevent accidental modification
 ###  What does nix flake lock do, and why is it critical for reproducibility?
+It serves as a version control file and contains the dependecies version after entering the developement environment
 ### Purity & Sandboxing: Nix builds are executed in a “sandbox”. What would happen if your program tried to download a file or read your system’s /etc/passwd during the build phase in a Nix derivation? Why is this restriction important?
 ### Suppose an upstream package dependency updates unexpectedly. How does Nix ensure that your project remainsreproducible?
 ### You need to share a reproducible development environment with Java and GCC with some students. What would a minimal flake.nix file look like? Should you share the flake.lock file too?
+
+
